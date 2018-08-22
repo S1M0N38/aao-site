@@ -1,0 +1,35 @@
+[
+{
+  "model": "api.coupon",
+  "pk": 8,
+  "fields": {
+    "datetime": "2018-08-19T16:32:29.376Z",
+    "user": 1,
+    "money": 100.0,
+    "note": "Obey the test GOAT (this is winning)",
+    "status": true
+  }
+},
+{
+  "model": "api.coupon",
+  "pk": 9,
+  "fields": {
+    "datetime": "2018-08-19T16:33:05.288Z",
+    "user": 1,
+    "money": 50.0,
+    "note": "Unknown status, hope for the best",
+    "status": null
+  }
+},
+{
+  "model": "api.coupon",
+  "pk": 10,
+  "fields": {
+    "datetime": "2018-08-19T16:33:29.108Z",
+    "user": 1,
+    "money": 75.0,
+    "note": "Damn, I lose",
+    "status": false
+  }
+}
+]

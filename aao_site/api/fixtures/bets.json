@@ -1,0 +1,50 @@
+[
+{
+  "model": "api.bet",
+  "pk": 15,
+  "fields": {
+    "odd": 133,
+    "coupon": 8,
+    "type": "full_time_result",
+    "option": "1",
+    "value": 6.75,
+    "status": true
+  }
+},
+{
+  "model": "api.bet",
+  "pk": 16,
+  "fields": {
+    "odd": 135,
+    "coupon": 8,
+    "type": "full_time_result",
+    "option": "1",
+    "value": 1.45,
+    "status": true
+  }
+},
+{
+  "model": "api.bet",
+  "pk": 17,
+  "fields": {
+    "odd": 174,
+    "coupon": 9,
+    "type": "draw_no_bet",
+    "option": "1",
+    "value": 1.65,
+    "status": null
+  }
+},
+{
+  "model": "api.bet",
+  "pk": 18,
+  "fields": {
+    "odd": 185,
+    "coupon": 10,
+    "type": "full_time_result",
+    "option": "X",
+    "value": 3.1,
+    "status": false
+  }
+}
+]

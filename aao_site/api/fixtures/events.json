@@ -1,0 +1,54 @@
+[
+{
+  "model": "api.event",
+  "pk": 32,
+  "fields": {
+    "datetime": "2018-08-20T19:00:00Z",
+    "country": "england",
+    "league": "premier_league",
+    "home_team": "Crystal Palace",
+    "away_team": "Liverpool",
+    "home_goals": null,
+    "away_goals": null
+  }
+},
+{
+  "model": "api.event",
+  "pk": 34,
+  "fields": {
+    "datetime": "2018-08-25T14:00:00Z",
+    "country": "england",
+    "league": "premier_league",
+    "home_team": "Arsenal",
+    "away_team": "West Ham",
+    "home_goals": null,
+    "away_goals": null
+  }
+},
+{
+  "model": "api.event",
+  "pk": 37,
+  "fields": {
+    "datetime": "2018-08-25T14:00:00Z",
+    "country": "england",
+    "league": "premier_league",
+    "home_team": "Southampton",
+    "away_team": "Leicester City",
+    "home_goals": null,
+    "away_goals": null
+  }
+},
+{
+  "model": "api.event",
+  "pk": 44,
+  "fields": {
+    "datetime": "2018-08-19T18:30:00Z",
+    "country": "italy",
+    "league": "serie_a",
+    "home_team": "Sassuolo",
+    "away_team": "Inter",
+    "home_goals": null,
+    "away_goals": null
+  }
+}
+]

@@ -1,0 +1,300 @@
+[
+{
+  "model": "api.allodd",
+  "pk": 133,
+  "fields": {
+    "event": 32,
+    "datetime": "2018-08-19T16:26:40.951Z",
+    "bookmaker": "888sport",
+    "full_time_result": {
+      "1": 6.75,
+      "2": 1.42,
+      "X": 4.75
+    },
+    "draw_no_bet": {
+      "1": 5.5,
+      "2": 1.16
+    },
+    "both_teams_to_score": {
+      "no": 1.16,
+      "yes": 5.5
+    },
+    "double_chance": {
+      "12": 1.2,
+      "1X": 2.85,
+      "X2": 1.12
+    },
+    "under_over": {
+      "over": 1.57,
+      "under": 2.45
+    }
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 135,
+  "fields": {
+    "event": 34,
+    "datetime": "2018-08-19T16:26:40.951Z",
+    "bookmaker": "888sport",
+    "full_time_result": {
+      "1": 1.45,
+      "2": 6.25,
+      "X": 4.5
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 138,
+  "fields": {
+    "event": 37,
+    "datetime": "2018-08-19T16:26:40.951Z",
+    "bookmaker": "888sport",
+    "full_time_result": {
+      "1": 2.6,
+      "2": 2.85,
+      "X": 3.1
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 144,
+  "fields": {
+    "event": 32,
+    "datetime": "2018-08-19T16:26:41.410Z",
+    "bookmaker": "bwin",
+    "full_time_result": {
+      "1": 6.75,
+      "2": 1.44,
+      "X": 4.75
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 146,
+  "fields": {
+    "event": 34,
+    "datetime": "2018-08-19T16:26:41.410Z",
+    "bookmaker": "bwin",
+    "full_time_result": {
+      "1": 1.4,
+      "2": 7.0,
+      "X": 4.75
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 149,
+  "fields": {
+    "event": 37,
+    "datetime": "2018-08-19T16:26:41.410Z",
+    "bookmaker": "bwin",
+    "full_time_result": {
+      "1": 2.55,
+      "2": 2.75,
+      "X": 3.1
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 156,
+  "fields": {
+    "event": 44,
+    "datetime": "2018-08-19T16:26:46.794Z",
+    "bookmaker": "888sport",
+    "full_time_result": {
+      "1": 2.33,
+      "2": 1.14,
+      "X": 1.25
+    },
+    "draw_no_bet": {
+      "1": 1.65,
+      "2": 2.23
+    },
+    "both_teams_to_score": {
+      "no": 2.04,
+      "yes": 1.73
+    },
+    "double_chance": {
+      "12": 1.36,
+      "1X": 1.35,
+      "X2": 1.58
+    },
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 162,
+  "fields": {
+    "event": 32,
+    "datetime": "2018-08-19T16:30:15.171Z",
+    "bookmaker": "888sport",
+    "full_time_result": {
+      "1": 6.75,
+      "2": 1.42,
+      "X": 4.75
+    },
+    "draw_no_bet": {
+      "1": 5.5,
+      "2": 1.16
+    },
+    "both_teams_to_score": {
+      "no": 2.07,
+      "yes": 1.73
+    },
+    "double_chance": {
+      "12": 1.2,
+      "1X": 2.85,
+      "X2": 1.12
+    },
+    "under_over": {
+      "over": 1.57,
+      "under": 2.45
+    }
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 164,
+  "fields": {
+    "event": 34,
+    "datetime": "2018-08-19T16:30:15.171Z",
+    "bookmaker": "888sport",
+    "full_time_result": {
+      "1": 1.45,
+      "2": 6.25,
+      "X": 4.5
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 167,
+  "fields": {
+    "event": 37,
+    "datetime": "2018-08-19T16:30:15.171Z",
+    "bookmaker": "888sport",
+    "full_time_result": {
+      "1": 2.6,
+      "2": 2.85,
+      "X": 3.1
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 174,
+  "fields": {
+    "event": 44,
+    "datetime": "2018-08-19T16:30:21.529Z",
+    "bookmaker": "888sport",
+    "full_time_result": {
+      "1": 2.33,
+      "2": 1.14,
+      "X": 1.25
+    },
+    "draw_no_bet": {
+      "1": 1.65,
+      "2": 2.23
+    },
+    "both_teams_to_score": {
+      "no": 2.04,
+      "yes": 1.73
+    },
+    "double_chance": {
+      "12": 1.36,
+      "1X": 1.35,
+      "X2": 1.58
+    },
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 180,
+  "fields": {
+    "event": 32,
+    "datetime": "2018-08-19T16:30:30.341Z",
+    "bookmaker": "bwin",
+    "full_time_result": {
+      "1": 6.75,
+      "2": 1.44,
+      "X": 4.75
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 182,
+  "fields": {
+    "event": 34,
+    "datetime": "2018-08-19T16:30:30.341Z",
+    "bookmaker": "bwin",
+    "full_time_result": {
+      "1": 1.4,
+      "2": 7.0,
+      "X": 4.75
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+},
+{
+  "model": "api.allodd",
+  "pk": 185,
+  "fields": {
+    "event": 37,
+    "datetime": "2018-08-19T16:30:30.341Z",
+    "bookmaker": "bwin",
+    "full_time_result": {
+      "1": 2.55,
+      "2": 2.75,
+      "X": 3.1
+    },
+    "draw_no_bet": null,
+    "both_teams_to_score": null,
+    "double_chance": null,
+    "under_over": null
+  }
+}
+]
