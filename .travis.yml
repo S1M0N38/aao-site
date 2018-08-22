@@ -1,0 +1,28 @@
+language: python
+
+python:
+    - "3.6"
+
+notifications:
+    email: false
+
+addons:
+    postgresql: "9.6"
+
+env:
+    - DJANGO_SETTINGS_MODULE="config.settings.travis"
+
+install:
+    - pip install pipenv
+    - pipenv install --dev
+
+before_script:
+    - psql -c "CREATE DATABASE travisci;" -U postgres
+    - cd aao_site
+
+jobs:
+    include:
+    - stage: api_unittest
+      script: python manage.py test api
+    - stage: api_functional_test
+      script: python manage.py test functional_tests.test_api
