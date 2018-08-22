@@ -94,9 +94,6 @@ class CouponSerializer(serializers.ModelSerializer):
         if len(set(odds)) < len(odds):
             msg = 'Can\'t create coupon with due to odds repetitions'
             raise serializers.ValidationError(msg)
-        for bet in value:
-            bet['odd']
-        # TODO not null value of the odd
         return value
 
     def create(self, validated_data):
