@@ -26,3 +26,8 @@ jobs:
       script: python manage.py test api
     - stage: api_functional_test
       script: python manage.py test functional_tests.test_api
+    - stage: coverage
+      script:
+          - coverage run --source='.' manage.py test
+          - coverage xml
+          - python-codacy-coverage -r coverage.xml
