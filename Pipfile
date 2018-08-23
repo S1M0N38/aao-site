@@ -14,6 +14,7 @@ coverage = "*"
 python-language-server = {version = "*", extras = ["all"]}
 codacy-coverage = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
