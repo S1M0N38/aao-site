@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.contrib.postgres.fields import JSONField
 from django.core.validators import MinValueValidator
 
@@ -59,7 +59,7 @@ class AllOdd(Odd):
 
 class Coupon(models.Model):
     datetime = models.DateTimeField(auto_now=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     money = models.FloatField(validators=[MinValueValidator(0)])
     note = models.TextField(default='', blank=True)
     status = models.NullBooleanField()

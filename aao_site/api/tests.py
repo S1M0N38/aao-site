@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
@@ -16,6 +16,8 @@ from .serializers import (
     CouponSerializer,
     CouponBetSerializer,
     )
+
+User = get_user_model()
 
 
 class TestAuthentication(APITestCase):
