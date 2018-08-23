@@ -11,7 +11,7 @@ requests = "*"
 
 [dev-packages]
 coverage = "*"
-"flake8" = "*"
+python-language-server = {version = "*", extras = ["all"]}
 
 [requires]
 python_version = "3.7"
