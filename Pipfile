@@ -13,6 +13,7 @@ requests = "*"
 coverage = "*"
 python-language-server = {version = "*", extras = ["all"]}
 codacy-coverage = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
