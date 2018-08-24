@@ -6,6 +6,8 @@ SECRET_KEY = get_env_variable('SECRET_KEY')
 
 DEBUG = True
 
+ALLOWED_HOSTS += get_env_variable('ALLOWED_HOSTS').split(',')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
