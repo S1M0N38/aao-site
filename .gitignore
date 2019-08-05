@@ -91,3 +91,6 @@ local_settings.py
 
 # Static Files
 staticfiles/
+
+# vim tmp files (.swp)
+*.swp
