@@ -3,7 +3,7 @@ import os
 from django.core.exceptions import ImproperlyConfigured
 
 
-def get_env_variable(var_name):
+def env_var(var_name):
     """Get the environment variable or return exception."""
     try:
         return os.environ[var_name]
@@ -19,6 +19,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = False
 
 ALLOWED_HOSTS = []
+
+
+# Database definition
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aao',
+        'USER': env_var('DB_USER'),
+        'PASSWORD': env_var('DB_PASSWORD'),
+        'HOST': env_var('DB_HOST'),
+        'PORT': env_var('DB_PORT'),
+    }
+}
 
 
 # Application definition

@@ -2,19 +2,8 @@ from .base import *
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_env_variable('SECRET_KEY')
+SECRET_KEY = env_var('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS += get_env_variable('ALLOWED_HOSTS').split(',')
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aao',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+ALLOWED_HOSTS += ['127.0.0.1', '0.0.0.0']
