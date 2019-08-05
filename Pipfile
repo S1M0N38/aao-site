@@ -7,12 +7,12 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 requests = "*"
+gunicorn = "*"
 "psycopg2-binary" = "*"
 
 [dev-packages]
 coverage = "*"
 codacy-coverage = "*"
-gunicorn = "*"
 whitenoise = "*"
 "flake8" = "*"
 
