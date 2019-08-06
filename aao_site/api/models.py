@@ -94,6 +94,11 @@ class Bet(models.Model):
         default_related_name = 'bets'
 
     def save(self, *args, **kwargs):
+        """
+        Save the current value for the odds. Theoretically it's already store
+        in the odd link to the bet but it's also useful to store it here
+        in order to perform some simple calulation later.
+        """
         value = getattr(self.odd, self.type)[self.option]
         self.value = value
         super().save(*args, **kwargs)

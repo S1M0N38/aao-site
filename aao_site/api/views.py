@@ -7,10 +7,13 @@ from .serializers import (
     AllOddSerializer,
     CouponSerializer,
     CouponBetSerializer,
-    )
+)
 
 
 class EventList(generics.ListAPIView):
+    """
+    API endpoint that allows events to be viewed.
+    """
     serializer_class = EventSerializer
 
     def get_queryset(self):
@@ -20,11 +23,17 @@ class EventList(generics.ListAPIView):
 
 
 class EventRetrive(generics.RetrieveAPIView):
+    """
+    API endpoint that allows a single event to be viewed (by pk).
+    """
     serializer_class = EventSerializer
     queryset = Event.objects.all()
 
 
 class OddList(generics.ListAPIView):
+    """
+    API endpoint that allows odds to be viewed.
+    """
     serializer_class = EventOddSerializer
 
     def get_queryset(self):
@@ -34,11 +43,17 @@ class OddList(generics.ListAPIView):
 
 
 class OddRetrive(generics.RetrieveAPIView):
+    """
+    API endpoint that allows a single odd to be viewed (by pk).
+    """
     serializer_class = AllOddSerializer
     queryset = AllOdd.objects.all()
 
 
 class CouponListCreate(generics.ListCreateAPIView):
+    """
+    API endpoint that allows coupons to be created or viewed.
+    """
     serializer_class = CouponSerializer
 
     def get_queryset(self):
@@ -46,6 +61,9 @@ class CouponListCreate(generics.ListCreateAPIView):
 
 
 class CouponRetriveDestroy(generics.RetrieveDestroyAPIView):
+    """
+    API endpoint that allows a single coupon to be deleted (by pk).
+    """
     serializer_class = CouponBetSerializer
 
     def get_queryset(self):

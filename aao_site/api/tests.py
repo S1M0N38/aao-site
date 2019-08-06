@@ -8,14 +8,14 @@ from .models import (
     AllOdd,
     ActiveOdd,
     Coupon,
-    )
+)
 from .serializers import (
     EventSerializer,
     EventOddSerializer,
     AllOddSerializer,
     CouponSerializer,
     CouponBetSerializer,
-    )
+)
 
 User = get_user_model()
 

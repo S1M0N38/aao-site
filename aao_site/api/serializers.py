@@ -6,7 +6,7 @@ from .models import (
     AllOdd,
     Coupon,
     Bet,
-    )
+)
 
 
 class EventSerializer(serializers.ModelSerializer):
