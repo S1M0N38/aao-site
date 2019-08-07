@@ -34,7 +34,7 @@ jobs:
     - stage: api_unittest
       script: python manage.py test api home
     - stage: api_functional_test
-      script: python manage.py test functional_tests
+      script: xvfb-run python manage.py test functional_tests
     - stage: coverage
       script:
           - coverage run --source='.' manage.py test
