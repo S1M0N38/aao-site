@@ -37,6 +37,6 @@ jobs:
       script: xvfb-run python manage.py test functional_tests
     - stage: coverage
       script:
-          - coverage run --source='.' manage.py test
+          - xvfb-run coverage run --source='.' manage.py test
           - coverage xml
           - python-codacy-coverage -r coverage.xml
