@@ -1,9 +1,11 @@
+from unittest import skip
+
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 
 
-# Bob is simple person, he land on the home page and just take a look at that;
+# Sam is simple person, he land on the home page and just take a look at that;
 # he just want to know what Against All Odds is about.
 
 class HomePageTest(StaticLiveServerTestCase):
@@ -20,7 +22,7 @@ class HomePageTest(StaticLiveServerTestCase):
         super().tearDownClass()
 
     def test_against_all_odds_in_title(self):
-        # - Where am I? - said Bob. Ahhh, alright Against All Odds.
+        # - Where am I? - said Sam. Ahhh, alright Against All Odds.
         self.browser.get(f'{self.live_server_url}/')
         self.assertEqual(self.browser.title, 'Against All Odds')
         # But wait, what is exactly Against All Odds?
@@ -50,3 +52,9 @@ class HomePageTest(StaticLiveServerTestCase):
         button.click()
         docs_url = 'https://s1m0n38.github.io/aao-site-docs/'
         self.assertEqual(self.browser.current_url, docs_url)
+
+    @skip('Not implemented yet')
+    def test_link_to_sign_up_page(self):
+        # Sam is now looking for the way to sign up.
+        ...
+        # Now he can sign up and interact with aao.
