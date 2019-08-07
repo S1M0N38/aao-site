@@ -22,7 +22,7 @@ install:
     - sudo mv -f ~/chromedriver /usr/local/share/
     - sudo chmod +x /usr/local/share/chromedriver
     - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
-    - pip install pipenv
+    - pip install pipenv --upgrade -q
     - pipenv install --dev
 
 before_script:
