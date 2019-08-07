@@ -3,16 +3,25 @@ language: python
 python:
     - "3.6"
 
+cache: pip
+
 notifications:
     email: false
 
 addons:
     postgresql: "9.6"
+    chrome: stable
 
 env:
     - DJANGO_SETTINGS_MODULE="config.settings.travis"
 
 install:
+	- wget -q -N https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip -P ~/
+	- unzip -q ~/chromedriver_linux64.zip -d ~/
+	- rm ~/chromedriver_linux64.zip
+	- sudo mv -f ~/chromedriver /usr/local/share/
+	- sudo chmod +x /usr/local/share/chromedriver
+	- sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
     - pip install pipenv
     - pipenv install --dev
 
@@ -23,9 +32,9 @@ before_script:
 jobs:
     include:
     - stage: api_unittest
-      script: python manage.py test api
+      script: python manage.py test api home
     - stage: api_functional_test
-      script: python manage.py test functional_tests.test_api
+      script: python manage.py test functional_tests
     - stage: coverage
       script:
           - coverage run --source='.' manage.py test
