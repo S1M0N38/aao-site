@@ -16,12 +16,12 @@ env:
     - DJANGO_SETTINGS_MODULE="config.settings.travis"
 
 install:
-	- wget -q -N https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip -P ~/
-	- unzip -q ~/chromedriver_linux64.zip -d ~/
-	- rm ~/chromedriver_linux64.zip
-	- sudo mv -f ~/chromedriver /usr/local/share/
-	- sudo chmod +x /usr/local/share/chromedriver
-	- sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+    - wget -q -N https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip -P ~/
+    - unzip -q ~/chromedriver_linux64.zip -d ~/
+    - rm ~/chromedriver_linux64.zip
+    - sudo mv -f ~/chromedriver /usr/local/share/
+    - sudo chmod +x /usr/local/share/chromedriver
+    - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
     - pip install pipenv
     - pipenv install --dev
 
