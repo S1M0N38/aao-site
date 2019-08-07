@@ -26,7 +26,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aao',
+        'NAME': env_var('DB_NAME'),
         'USER': env_var('DB_USER'),
         'PASSWORD': env_var('DB_PASSWORD'),
         'HOST': env_var('DB_HOST'),
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'api',
+    'home',
 ]
 
 MIDDLEWARE = [
