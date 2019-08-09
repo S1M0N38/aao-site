@@ -71,6 +71,7 @@ MIDDLEWARE = [
 # URLS
 ROOT_URLCONF = 'config.urls'
 LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 TEMPLATES = [
     {
