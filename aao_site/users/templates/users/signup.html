@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="container-fliud text-center px-3 mt-5">
+    <div class="row justify-content-center">
+      <div class="col" style="max-width: 550px;">
+        <form method="post">
+          {% csrf_token %}
+          {% crispy form %}
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

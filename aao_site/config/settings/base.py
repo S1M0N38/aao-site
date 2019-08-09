@@ -15,11 +15,15 @@ def env_var(var_name):
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = []
 
+FIXTURE_DIRS = (
+    os.path.join(os.path.dirname(BASE_DIR), 'functional_tests', 'fixtures'),
+)
 
 # Database definition
 
@@ -46,8 +50,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'crispy_forms',
     'api',
     'home',
+    'users',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +68,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# URLS
 ROOT_URLCONF = 'config.urls'
+LOGIN_URL = '/login/'
 
 TEMPLATES = [
     {
@@ -123,8 +132,13 @@ USE_L10N = True
 USE_TZ = True
 
 
+# email backend
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
