@@ -1,24 +1,78 @@
-from unittest import skip
-
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
 
 
-@skip('Not implemented yet')
 class LoginPageTest(TestCase):
-    ...
+
+    def setUp(self):
+        url = reverse('login')
+        self.response = self.client.get(url)
+
+    def test_signup_status_code_get(self):
+        self.assertEquals(self.response.status_code, 200)
+
+    def test_signup_template_used(self):
+        self.assertTemplateUsed(self.response, 'users/login.html')
+
+    def test_contains_csrf(self):
+        self.assertContains(self.response, 'csrfmiddlewaretoken')
+
+    def test_contains_form(self):
+        form = self.response.context.get('form')
+        self.assertIsInstance(form, AuthenticationForm)
 
 
-@skip('Not implemented yet')
 class SuccessfullLoginTest(TestCase):
-    ...
+
+    fixtures = ['users']
+
+    def setUp(self):
+        url = reverse('login')
+        user = {
+            'username': 'test',
+            'password': 'tSPjcAmxeXFY5C4',
+        }
+        self.response = self.client.post(url, user)
+        self.dashboard_url = reverse('dashboard')
+
+    def test_redirection(self):
+        self.assertRedirects(self.response, self.dashboard_url)
+
+    def test_user_authenticathed(self):
+        self.assertIn('_auth_user_id', self.client.session)
 
 
-@skip('Not implemented yet')
 class InvalidLoginTest(TestCase):
-    ...
+
+    fixtures = ['users']
+    url = reverse('login')
+
+    def test_login_status_code(self):
+        response = self.client.post(self.url, {})
+        self.assertEquals(response.status_code, 200)
+
+    def test_submit_empty_form(self):
+        response = self.client.post(self.url, {})
+        self.assertFormError(
+            response, 'form', 'username', 'This field is required.'
+        )
+        self.assertFormError(
+            response, 'form', 'password', 'This field is required.'
+        )
+
+    def test_submit_wrong_credeantial(self):
+        data = {
+            'username': 'fake_username',
+            'password': 'fake_password'
+        }
+        response = self.client.post(self.url, data)
+        self.assertFormError(
+            response, 'form', '__all__',
+            ('Please enter a correct username and password. '
+             'Note that both fields may be case-sensitive.')
+        )
 
 
 class SignupPageTest(TestCase):
@@ -71,7 +125,7 @@ class InvalidSignupTest(TestCase):
         response = self.client.post(self.url, {})
         self.assertEquals(response.status_code, 200)
 
-    def test_empty_form(self):
+    def test_submit_empty_form(self):
         response = self.client.post(self.url, {})
         self.assertFormError(
             response, 'form', 'email', 'This field is required.'

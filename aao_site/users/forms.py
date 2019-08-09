@@ -2,9 +2,31 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field, HTML
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.password_validation import validate_password
+
 from .validators import validate_email
+
+
+class UserLoginForm(AuthenticationForm):
+
+    def __init__(self, *args, **kwargs):
+        super(UserLoginForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout()
+        self.helper.form_show_labels = False
+        self.helper.form_show_errors = False
+        self.helper.layout = Layout(
+            Field('username', placeholder='username'),
+            Field('password', placeholder='password'),
+            # raw html because no way to submit with btn-outline
+            HTML('<input type="submit" name="submit" value="log in" class='
+                 '"btn btn btn-outline-primary mt-2" id="button-id-submit">')
+        )
+
+    class Meta:
+        model = User
+        fields = ['username', 'password1']
 
 
 class UserSignupForm(UserCreationForm):

@@ -6,19 +6,36 @@ from .utils import StaticLiveServerTestCaseSelenium
 # Sam now want to start to use aao, so he click on dashboard and a wild login
 # page appeared.
 
-@skip('Not implemented yet')
 class LoginPageTest(StaticLiveServerTestCaseSelenium):
+
+    @property
+    def url(self):
+        return f'{self.live_server_url}/login/'
+
+    def compile_form(self, username, password):
+        username_box = self.browser.find_element_by_name('username')
+        password_box = self.browser.find_element_by_name('password')
+        username_box.send_keys(username)
+        password_box.send_keys(password)
+        self.browser.find_element_by_name('submit').click()
 
     def test_login_wrong_credentials(self):
         # He try to login with some credentials that he use also for other
         # website; maybe he have already an account and he doesn't remeber
         # his past.
-        ...
+        self.browser.get(self.url)
+        self.compile_form('fake_username', 'fake_password')
+        self.assertEqual(self.browser.current_url, self.url)
+        error_msg = self.browser.find_element_by_tag_name('p').text
+        self.assertEqual(error_msg, 'Incorrect username and password.')
 
     def test_login_right_credentials(self):
         # No, he doesn't have an account. He ask a friend to borrow an
         # account in order to take a quick glance to aao dashbord.
-        ...
+        self.browser.get(self.url)
+        self.compile_form('test', 'tSPjcAmxeXFY5C4')
+        self.assertEqual(
+            self.browser.current_url, f'{self.live_server_url}/dashboard/')
 
 
 # He conclude that aao have some potential so he decided to make a personal

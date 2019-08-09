@@ -1,12 +1,17 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.views.generic.edit import CreateView
 
-from .forms import UserSignupForm
+from .forms import UserLoginForm, UserSignupForm
 
 
-class LoginPage(TemplateView):
+class LoginPage(LoginView):
     template_name = 'users/login.html'
+    form_class = UserLoginForm
+
+
+class LogoutPage(LogoutView):
+    ...
 
 
 class SignupPage(CreateView):
