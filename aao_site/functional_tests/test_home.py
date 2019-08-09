@@ -1,5 +1,3 @@
-from unittest import skip
-
 from selenium.common.exceptions import WebDriverException
 
 from .utils import StaticLiveServerTestCaseSelenium
@@ -25,13 +23,14 @@ class HomePageTest(StaticLiveServerTestCaseSelenium):
         with self.assertRaises(WebDriverException):
             button.click()
 
-    def test_button_dashboard_disabled(self):
+    def test_button_dashboard_enable(self):
         # Then he try to click on the "dashboard button" but also this button
         # seams to be disabled.
         self.browser.get(f'{self.live_server_url}/')
         button = self.browser.find_element_by_id('dashboard')
-        with self.assertRaises(WebDriverException):
-            button.click()
+        button.click()
+        login_url = f'{self.live_server_url}/login'
+        self.assertIn(login_url, self.browser.current_url)
 
     def test_button_api_enable(self):
         # He doesn't give up and try to click on "API button" and this time

@@ -7,6 +7,8 @@ from selenium import webdriver
 
 class StaticLiveServerTestCaseSelenium(StaticLiveServerTestCase):
 
+    fixtures = ['users']
+
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
