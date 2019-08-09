@@ -56,11 +56,12 @@ class SignupPageTest(StaticLiveServerTestCaseSelenium):
         password_box.send_keys(password)
         self.browser.find_element_by_name('submit').click()
 
-    @skip('Not implemented yet')
     def test_link_to_signup_page(self):
         # At the bottom of the login he saw the link to the signup so he
         # click it.
-        ...
+        self.browser.get(f'{self.live_server_url}/login/')
+        self.browser.find_elements_by_tag_name('a')[1].click()
+        self.assertEqual(self.browser.current_url, self.url)
 
     def test_submit_empty_form(self):
         # He try to submit the empty form but obviously nothing happens
