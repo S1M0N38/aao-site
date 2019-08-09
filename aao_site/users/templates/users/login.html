@@ -10,10 +10,15 @@
           {% crispy form %}
         </form>
         {% if form.errors %}
-         <div class="alert alert-danger mt-4" role="alert"> 
+          <div class="alert alert-danger mt-4" role="alert"> 
             <p>Incorrect username and password.</p>
           </div>
         {% endif %}
+        <div class="mt-4">
+          <p class="text-muted">
+            otherwise <a href="#">reset password</a>
+            or <a href="#">create new account</a>
+          </p>
         </div>
       </div>
     </div>
