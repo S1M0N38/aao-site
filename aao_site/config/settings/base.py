@@ -26,7 +26,6 @@ FIXTURE_DIRS = (
 )
 
 # Database definition
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -40,7 +39,6 @@ DATABASES = {
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -121,25 +119,24 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
-# email backend
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-
 # Static files (CSS, JavaScript, Images)
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = env_var('EMAIL_HOST')
+EMAIL_HOST_USER = env_var('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env_var('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env_var('EMAIL_PORT')
