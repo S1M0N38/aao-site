@@ -101,7 +101,6 @@ REST_FRAMEWORK = {
 
 
 # Password validation
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -131,12 +130,3 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-
-# email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
-EMAIL_HOST = env_var('EMAIL_HOST')
-EMAIL_HOST_USER = env_var('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env_var('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = env_var('EMAIL_PORT')
