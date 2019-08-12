@@ -16,17 +16,14 @@ def env_var(var_name):
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
 ALLOWED_HOSTS = []
+
 
 FIXTURE_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), 'functional_tests', 'fixtures'),
 )
 
 # Database definition
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -40,7 +37,6 @@ DATABASES = {
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
