@@ -1,5 +1,8 @@
+import re
+
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.core import mail
 from django.test import TestCase
 from django.urls import reverse
 
@@ -102,7 +105,7 @@ class SuccessfullSignupTest(TestCase):
         user = {
             'email': 'test@mail.com',
             'username': 'test',
-            'password1': 'this_is_the_test_password_1234',
+            'password1': 'tSPjcAmxeXFY5C4',
         }
         self.response = self.client.post(url, user)
         self.login_url = reverse('login')
@@ -112,8 +115,6 @@ class SuccessfullSignupTest(TestCase):
 
     def test_user_creation(self):
         self.assertTrue(User.objects.exists())
-
-    # TODO email verification
 
 
 class InvalidSignupTest(TestCase):
@@ -173,3 +174,42 @@ class InvalidSignupTest(TestCase):
             'This password is too common.'
             # not test other errors because it means to test django
         )
+
+
+class UserActivationTest(TestCase):
+
+    def setUp(self):
+        url = reverse('signup')
+        user = {
+            'email': 'test@mail.com',
+            'username': 'test',
+            'password1': 'tSPjcAmxeXFY5C4',
+        }
+        self.response = self.client.post(url, user)
+        self.login_url = reverse('login')
+
+    def test_email_sent(self):
+        self.assertEqual(
+            mail.outbox[0].subject, 'Activate your Against All Odds account.')
+
+    def test_no_activated_user_try_to_login(self):
+        # this test is here and not in InvalidLoginTest because
+        # the user in the fixtures is_active == True (also use for other
+        # apps).
+        user = {
+            'username': 'test',
+            'password': 'tSPjcAmxeXFY5C4'
+        }
+        response = self.client.post(self.login_url, user)
+        self.assertTemplateUsed(response, 'users/login.html')
+
+    def test_valid_activation_link(self):
+        link = re.findall('href="([^"]*)"', mail.outbox[0].body)[0]
+        self.client.get(link)
+        self.assertTrue(User.objects.first().is_active)
+
+    def test_invalid_activation_link(self):
+        link = re.findall('href="([^"]*)"', mail.outbox[0].body)[0]
+        invalid_link = link[:-7] + 'xxxxx/'
+        self.client.get(invalid_link)
+        self.assertFalse(User.objects.first().is_active)
