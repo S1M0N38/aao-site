@@ -12,11 +12,11 @@ gunicorn = "*"
 pyyaml = "*"
 uritemplate = "*"
 django-crispy-forms = "*"
+whitenoise = "*"
 
 [dev-packages]
 coverage = "*"
 codacy-coverage = "*"
-whitenoise = "*"
 "flake8" = "*"
 selenium = "*"
 bpython = "*"
