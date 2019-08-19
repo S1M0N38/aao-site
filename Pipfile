@@ -13,6 +13,7 @@ pyyaml = "*"
 uritemplate = "*"
 django-crispy-forms = "*"
 whitenoise = "*"
+mysqlclient = "*"
 
 [dev-packages]
 coverage = "*"
