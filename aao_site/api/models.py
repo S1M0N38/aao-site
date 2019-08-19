@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from django.contrib.postgres.fields import JSONField
+from django_mysql.models import JSONField
 from django.core.validators import MinValueValidator
 
 
@@ -79,9 +79,18 @@ class Bet(models.Model):
         ('double_chance', 'double_chance'),
         ('under_over', 'under_over'),
     )
-    VALUES = (('1', '1'), ('X', 'X'), ('2', '2'), ('12', '12'), ('1X', '1X'),
-              ('X2', 'X2'), ('over', 'over'), ('under', 'under'),
-              ('yes', 'yes'), ('no', 'no'))
+    VALUES = (
+        ('1', '1'),
+        ('X', 'X'),
+        ('2', '2'),
+        ('12', '12'),
+        ('1X', '1X'),
+        ('X2', 'X2'),
+        ('over', 'over'),
+        ('under', 'under'),
+        ('yes', 'yes'),
+        ('no', 'no'),
+    )
     odd = models.ForeignKey(AllOdd, on_delete=models.CASCADE)
     coupon = models.ForeignKey(Coupon, on_delete=models.CASCADE)
     type = models.CharField(max_length=20, choices=TYPES)
